@@ -113,7 +113,7 @@ def process(*, fn: str, timezone: ZoneInfo, **kwargs: dict) -> DataTree:
         ysn = dgutils.read_value(infile, pars["start"], ddtype, npoints) * pars["slope"]
     yss = np.ones(npoints) * pars["slope"]
 
-    detector, title = pars["tracetitle"].split(",")
+    detector = pars["tracetitle"].split(",")[0]
 
     uts = str_to_uts(
         timestamp=pars["timestamp"], format="%d-%b-%y, %H:%M:%S", timezone=timezone
